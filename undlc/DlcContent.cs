@@ -3,10 +3,22 @@ using System.Linq;
 
 namespace undlc
 {
+    /// <summary>
+    /// Represents a DLC header
+    /// </summary>
     public struct DlcHeader
     {
+        /// <summary>
+        /// DLC Generator Application information
+        /// </summary>
         public DlcGenerator Generator;
+        /// <summary>
+        /// Freely chosable version number
+        /// </summary>
         public string Version;
+        /// <summary>
+        /// Attributes or something
+        /// </summary>
         public DlcTribute Tribute;
 
         public DlcHeader(XmlNode E)
@@ -26,8 +38,14 @@ namespace undlc
         }
     }
 
+    /// <summary>
+    /// Represents a DLC body
+    /// </summary>
     public struct DlcContent
     {
+        /// <summary>
+        /// DLC Package
+        /// </summary>
         public DlcPackage Package;
 
         public DlcContent(XmlNode E)
@@ -43,13 +61,31 @@ namespace undlc
         }
     }
 
+    /// <summary>
+    /// DLC File Group Information
+    /// </summary>
     public struct DlcPackage
     {
+        /// <summary>
+        /// Package Name
+        /// </summary>
         public string Name;
+        /// <summary>
+        /// List of passwords for files
+        /// </summary>
         public string Passwords;
+        /// <summary>
+        /// Comment
+        /// </summary>
         public string Comment;
+        /// <summary>
+        /// Category
+        /// </summary>
         public string Category;
 
+        /// <summary>
+        /// File List
+        /// </summary>
         public DlcFile[] Files;
 
         public DlcPackage(XmlNode E)
@@ -74,10 +110,22 @@ namespace undlc
         }
     }
 
+    /// <summary>
+    /// Represents a DLC File entry
+    /// </summary>
     public struct DlcFile
     {
+        /// <summary>
+        /// Download URL
+        /// </summary>
         public string URL;
+        /// <summary>
+        /// Real File name
+        /// </summary>
         public string Filename;
+        /// <summary>
+        /// File size
+        /// </summary>
         public long Size;
 
         public DlcFile(XmlNode E)
@@ -96,10 +144,22 @@ namespace undlc
         }
     }
 
+    /// <summary>
+    /// DLC Generator Info
+    /// </summary>
     public struct DlcGenerator
     {
+        /// <summary>
+        /// Application name
+        /// </summary>
         public string App;
+        /// <summary>
+        /// Application version
+        /// </summary>
         public string Version;
+        /// <summary>
+        /// Application info URL
+        /// </summary>
         public string Url;
 
         public DlcGenerator(XmlNode E)
@@ -117,8 +177,14 @@ namespace undlc
         }
     }
 
+    /// <summary>
+    /// ¯\(O-°)/¯
+    /// </summary>
     public struct DlcTribute
     {
+        /// <summary>
+        /// Name
+        /// </summary>
         public string Name;
 
         public DlcTribute(XmlNode E)
