@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace undlc
 {
@@ -10,6 +7,13 @@ namespace undlc
     {
         static void Main(string[] args)
         {
+#if DEBUG
+            args = new string[] { @"C:\Apache24\htdocs\decrypt\test\sample-container-1.dlc" };
+#endif
+            var F = new DlcContainer(File.ReadAllText(args[0]));
+
+            Console.Error.WriteLine("#END");
+            Console.ReadKey(true);
         }
     }
 }
