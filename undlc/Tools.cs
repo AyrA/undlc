@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml;
 
@@ -18,6 +19,11 @@ namespace undlc
         public static string Attr(XmlAttribute A)
         {
             return A == null ? string.Empty : A.Value;
+        }
+
+        public static string B2S(IEnumerable<byte> Data, bool Upper = false)
+        {
+            return string.Join("", Data.Select(m => m.ToString(Upper ? "X2" : "x2")));
         }
 
         /// <summary>
